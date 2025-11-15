@@ -8,12 +8,15 @@ class CracklePop
   private
 
   def crackle_pop_or_else(number)
+    crackle_pop = checks(number)
+    return crackle_pop unless crackle_pop.empty?
+    number
+  end
+
+  def checks(number)
     crackle = "Crackle" if divisible_by?(number, 3)
     pop = "Pop" if divisible_by?(number, 5)
-    crackle_pop = [crackle, pop].compact.join
-
-    return crackle_pop if crackle || pop
-    number
+    [crackle, pop].compact.join
   end
 
   def divisible_by?(dividend, divisor)
