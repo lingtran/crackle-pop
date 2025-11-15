@@ -20,5 +20,3 @@ class CracklePop
     dividend % divisor == 0
   end
 end
-
-CracklePop.new.run((1..100))
